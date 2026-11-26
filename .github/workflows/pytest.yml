@@ -22,3 +22,9 @@ jobs:
     - name: Run Tests
       run: |
         pytest test_api.py -s --html=report.html
+        - name: Upload HTML Report
+          if: always() # 意思是无论测试成功还是失败，都要把报告传上来
+          uses: actions/upload-artifact@v4
+          with:
+            name: API-Test-Report
+            path: report.html
