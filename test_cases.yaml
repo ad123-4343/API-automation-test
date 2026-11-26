@@ -1,0 +1,20 @@
+- name: "查询文章列表-GET"
+  method: "GET"
+  url: "https://jsonplaceholder.typicode.com/posts/1"
+  expected_status: 200
+  expected_json:
+    id: 1
+    userId: 1
+
+- name: "创建新文章-POST"
+  method: "POST"
+  url: "https://jsonplaceholder.typicode.com/posts"
+  payload:
+    title: "我的自动化测试文章"
+    body: "这是用Pytest发出来的内容"
+    userId: 1
+  expected_status: 201
+  expected_json:
+    title: "我的自动化测试文章"
+    body: "这是用Pytest发出来的内容"
+    userId: 1
